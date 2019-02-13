@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 plt.grid()
 
 prim = list(map(float, input('Input accordingly, seperated by comas:\nsepal length in cm, sepal width in cm, petal length in cm, petal width in cm \n').split(',')))
-
+#prim = User inputted flower iris
 iris = {"Iris-setosa" : [],"Iris-versicolor" : [],"Iris-virginica" : []}
-
+#Initializing a dictionary with these three types
 iris_types = ["Iris-setosa", "Iris-versicolor", "Iris-virginica"]
-
+#Added to avoid multiple elifs
 data = open('iris.data', 'r').read().split('\n')
 
 for row in data:
@@ -18,7 +18,8 @@ for row in data:
 setosa = iris["Iris-setosa"]
 versi = iris["Iris-versicolor"]
 virg = iris["Iris-virginica"]
-def zeroifbelow(n):
+
+def zeroifbelow(n): #Dumb function, added so the percentages printed don't be -800% or so
     if n<0: return 0
     else: return n
 def distance(x):
@@ -46,4 +47,5 @@ plt.scatter(prim[0] + prim[1], prim[2] + prim[3], color='purple')
 plt.ylabel('Blue = Iris Virginica \nGreen = Iris Versicolor \nRed = Iris Setosa')
 plt.xlabel('Your flower belongs in ' + iris_types[numofclose])
 print("{0:.0%}".format(zeroifbelow(1.7-min(closest))))
+
 plt.show()
