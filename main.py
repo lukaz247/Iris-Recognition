@@ -19,9 +19,6 @@ setosa = iris["Iris-setosa"]
 versi = iris["Iris-versicolor"]
 virg = iris["Iris-virginica"]
 
-def zeroifbelow(n): #Dumb function, added so the percentages printed don't be -800% or so
-    if n<0: return 0
-    else: return n
 def distance(x):
     plt.scatter(x[0] + x[1], x[2] + x[3], color=c)
     r1 = abs(x[0] - prim[0])
@@ -46,6 +43,5 @@ plt.scatter(prim[0] + prim[1], prim[2] + prim[3], color='purple')
 
 plt.ylabel('Blue = Iris Virginica \nGreen = Iris Versicolor \nRed = Iris Setosa')
 plt.xlabel('Your flower belongs in ' + iris_types[numofclose])
-print("{0:.0%}".format(zeroifbelow(1.7-min(closest))))
 
 plt.show()
